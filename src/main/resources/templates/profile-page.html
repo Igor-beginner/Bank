@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Profile</title>
+</head>
+<body>
+<form th:action="@{/profile}" method="post">
+    <label>
+        <p th:text="${user.username}"></p>
+        <input name="username" type="text" th:value="${user.username}" placeholder="username"/>
+    </label>
+    <label>
+        <input name="password" type="password" placeholder="password"/>
+    </label>
+    <button type="submit">Edit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create your own account right now!</title>
+</head>
+<body>
+    <form method="post" action="/constructor/account">
+        <label>
+            <input type="text" name="title" placeholder="Title"/>
+        </label>
+        <select name="accountType">
+            <option th:each="accountType : ${accountTypes}" th:value="${accountType.name}" th:text="${accountType.name}"></option>
+        </select>
+        <label>
+            <input type="text" name="balance" placeholder="Balance"/>
+        </label>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

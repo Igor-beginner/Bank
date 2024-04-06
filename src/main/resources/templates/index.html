@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to bank application!</title>
+</head>
+<body>
+<div th:if="${user} != null">
+    <h1 th:text="'Hello, ' + ${user.username} + '!'"></h1>
+</div>
+<h1 th:if="${user} == null">Welcome to bank application!</h1>
+<a href="/login">Sign in</a>
+</body>
+</html>

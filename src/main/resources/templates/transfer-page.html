@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer</title>
+</head>
+<body>
+
+<form action="/transfer" method="post">
+    <select name="sender">
+        <option th:each="account : ${accounts}" th:value="${account.id}" th:text="${account.title}"></option>
+    </select>
+    <label>
+        <input type="text" name="sum" placeholder="sum"/>
+    </label>
+    <label>
+        <input type="text" name="receiver" placeholder="receiver"/>
+    </label>
+    <button type="submit">Send</button>
+</form>
+</body>
+</html>

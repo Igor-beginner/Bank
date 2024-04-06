@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts</title>
+</head>
+<body>
+<a href="/new/account">Create new Account</a>
+<div>
+    <a th:each="account : ${accounts}" th:text="${account.title}" th:href="@{/account/{accountId}(accountId=${account.id})}"></a>
+</div>
+</body>
+</html>

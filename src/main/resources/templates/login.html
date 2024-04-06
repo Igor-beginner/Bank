@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In to Continue</title>
+</head>
+<body>
+<div th:if="${param.error}">
+    <p>Wrong username or password</p>
+</div>
+<form method="post" action="/login">
+    <label>
+        <input name="username" type="text"/>
+        <input name="password" type="password"/>
+    </label>
+    <button type="submit">Sign in</button>
+</form>
+<br>
+<a th:href="@{/registration}">Don't have an account?</a>
+</body>
+</html>

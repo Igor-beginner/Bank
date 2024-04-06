@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body>
+    <div>
+        <ul th:each="user : ${users}">
+            <li><a th:text="${user.username}" th:href="@{/user/{userId}(userId=${user.id})}"></a></li>
+        </ul>
+    </div>
+</body>
+</html>

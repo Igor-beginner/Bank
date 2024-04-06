@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Edit user ' + ${user.username}"></title>
+</head>
+<body>
+<h1>Make changes!</h1>
+    <form th:action="@{/user/{userId}(userId=${user.id})}" method="post">
+        <input name="oldUsername" type="hidden" th:value="${user.username}">
+        <label>
+            <input name="username" type="text" th:value="${user.username}" placeholder="username"/>
+        </label>
+        <br>
+        <label>
+            <input name="password" type="password" placeholder="password"/>
+        </label>
+        <br>
+        <label>
+            <span>Role:</span>
+            <select name="role">
+                <div th:each="role : ${roles}">
+                <option th:value="${role.name}" th:text="${role.name}" th:name="${role.name}" th:selected="${role == user.role}"></option>
+                </div>
+            </select>
+        </label>
+        <br>
+        <label>
+            <span>Enabled:</span>
+            <input th:field="*{user.enabled}" type="checkbox" th:checked="${user.enabled}"/>
+        </label>
+        <br>
+        <button type="submit">Push</button>
+    </form>
+</body>
+</html>

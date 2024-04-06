@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new account</title>
+</head>
+<body>
+<div th:if="${err}">
+    <p th:text="${message}"></p>
+</div>
+<form method="post" action="/user">
+    <label>
+        <input name="username" type="text"/>
+        <input name="password" type="password"/>
+    </label>
+    <button type="submit">Sign up</button>
+</form>
+</body>
+</html>
